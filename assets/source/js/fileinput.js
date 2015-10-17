@@ -18,6 +18,12 @@ function filemanagerTinyMCE(callback, value, meta) {
             callback(data.url, {alt: data.alt});
             modal.modal("hide");
         });
+        
+        $(this).contents().find(".dashboard").on("click", "#cancel-file-btn", function(e) {
+            e.preventDefault();
+            
+            modal.modal("hide");
+        });
     });
 
     modal.find(".modal-body").html(iframe);
@@ -63,6 +69,12 @@ $(document).ready(function() {
             }
 
             input.val(data[pasteData]);
+            modal.modal("hide");
+        });
+        
+        $(this).contents().find(".dashboard").on("click", "#cancel-file-btn", function(e) {
+            e.preventDefault();
+            
             modal.modal("hide");
         });
     }

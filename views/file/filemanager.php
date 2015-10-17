@@ -10,6 +10,7 @@ use yii\helpers\Url;
 /* @var $searchModel pendalf89\filemanager\models\Mediafile */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 $this->params['moduleBundle'] = FilemanagerAsset::register($this);
+
 ?>
 
 <header id="header"><span class="glyphicon glyphicon-picture"></span> <?= Module::t('main', 'File manager') ?></header>
@@ -20,17 +21,19 @@ $this->params['moduleBundle'] = FilemanagerAsset::register($this);
         'layout' => '<div class="items">{items}</div>{pager}',
         'itemOptions' => ['class' => 'item'],
         'itemView' => function ($model, $key, $index, $widget) {
-               if(file_exists(substr($model->getDefaultThumbUrl($this->params['moduleBundle']->baseUrl), 1))){
+               //if(file_exists($model->getDefaultThumbUrl($this->params['moduleBundle']->baseUrl))){
                     return Html::a(
-                        Html::img(Yii::getAlias('@web').$model->getDefaultThumbUrl($this->params['moduleBundle']->baseUrl))
+                        Html::img($model->getDefaultThumbUrl($this->params['moduleBundle']->baseUrl))
                         . '<span class="checked glyphicon glyphicon-check"></span>',
                         '#mediafile',
                         ['data-key' => $key]
                     );
-                }
-                else{
-                    return null;
-                }
+                //}
+                //else{
+                 //   return null;
+                //}
+        
+             //return $model->getDefaultThumbUrl($this->params['moduleBundle']->baseUrl);
             },
     ]) ?>
 

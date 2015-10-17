@@ -59,8 +59,8 @@ $bundle = FilemanagerAsset::register($this);
     <?= Html::hiddenInput('id', $model->id) ?>
 
     <?= Html::button(Module::t('main', 'Insert'), ['id' => 'insert-btn', 'class' => 'btn btn-primary btn-sm']) ?>
-
     <?= Html::submitButton(Module::t('main', 'Save'), ['class' => 'btn btn-success btn-sm']) ?>
+    <?= Html::button(Module::t('main', 'Cancelar'), ['id' => 'cancel-file-btn', 'class' => 'btn btn-default btn-sm']) ?>
 
     <?php if ($message = Yii::$app->session->getFlash('mediafileUpdateResult')) : ?>
         <div class="text-success"><?= $message ?></div>

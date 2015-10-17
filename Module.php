@@ -59,6 +59,7 @@ class Module extends \yii\base\Module
     {
         parent::init();
         $this->registerTranslations();
+        //Yii::setAlias('@webroot', '/');
     }
 
     public function registerTranslations()
